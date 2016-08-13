@@ -1,0 +1,23 @@
+#txt {
+  border:none;
+  font-family:verdana;
+  font-size:16pt;
+  font-weight:bold;
+  border-right-color:#FFFFFF
+}
+
+#op0{
+	visibility:visible;	
+    }
+#op1{
+	visibility:hidden;	
+    }
+#op2{
+	visibility:hidden;		
+    }
+#op3{
+	visibility:hidden;	
+    }
+#op4{
+	visibility:hidden;	
+    }

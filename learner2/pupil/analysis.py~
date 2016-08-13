@@ -1,0 +1,82 @@
+import os
+import sqlite3
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
+import scipy as sp
+import numpy as np
+f=open('/home/unknown/Django_web/Django-1.8.5/learner2/pupil/datain.csv','r+')
+conn = sqlite3.connect('/home/unknown/Django_web/Django-1.8.5/learner2/db.sqlite3')
+cursor1=conn.execute("select ans,hint,time from pupil_user_data;")
+cursor2=conn.execute("select rans from pupil_questions;")
+j=0
+row3 = [0,0,0,0,0]
+row4 = [0,0,0,0,0]
+
+for row1 in cursor2:
+  row1 = list(row1)
+  row3[j] = row1[0]
+  j = j+1
+  print row1
+j=0
+for row in cursor1:
+  row = list(row)
+  row[0] = int(row[0])
+  row[1] = int(row[1])
+  row[2] = int(row[2])
+  row[2] = row[2]/1000000
+  print row
+  if row3[j] == row[0]:
+    row[0] = 1
+  else:
+    row[0] = 0
+  row4[j] = row
+  j = j+1
+  print row4
+  for i in range(3):
+       f.write(str(row[i])+',\t')
+  f.write('\n')
+
+print "fine"
+conn.commit();
+conn.close();
+f.close();
+
+data = sp.genfromtxt("datain.csv",delimiter=",")
+xs=data[:,0]
+ys=data[:,1]
+zs=data[:,2]
+#for i in range(5):
+ #xs=data[i,1]
+ #ys=data[i,2]
+ #zs=data[i,3]
+
+
+fig = plt.figure(1)
+ax = fig.gca(projection='3d')
+ax.set_xlabel('Answers')
+ax.set_ylabel('Hints')
+ax.set_zlabel('Time')
+ax.scatter(xs,ys,zs)
+plt.show()
+
+plt.figure(2)
+plt.ylabel('Hints')
+plt.xlabel('Time')
+plt.grid(True)
+plt.scatter(zs,ys)
+plt.show()
+
+row1 = analysis.row3
+	row2 = analysis.row4
+	wrong = 0
+	right = 0
+	for i in row1:
+		if row1[0] == 0:
+			wrong = wrong+1
+		else:
+			right = right+1
+	if right>=wrong:
+		context_dict = {'result': "Good.You are qualified for next level."}
+	else:
+		context_dict = {'result': "Sorry.You are not qualified for next level."}
+

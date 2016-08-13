@@ -1,0 +1,10 @@
+function hidenext(){
+	var dropdown = document.getElemnetId("hints");
+	var cur_val = dropdown.options[dropdown.selectedIndex].value;
+	if(cur_val == "0"){
+		document.getElemnetId("op1").style.visibility = "hidden";
+		}
+	else {
+		document.getElemnetId("op1").style.display = "visible";
+		}
+		}

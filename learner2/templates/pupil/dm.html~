@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>{% block Learner's_Learner %}Descrete Mathematics{% endblock %}</title>
+<link rel = "stylesheet" type="text/css" href="{% static 'css/prog.css' %}"/>
+<script>
+function myFunction() {
+	var myWindow = window.open("","MsgWindow","width=1400,height=1024,scrollbars=yes");
+	myWindow.location="/pupil/test10"
+}
+function myFunct() {
+	var myWidow = window.open("","MsWindow","width=1400,height=1024,scrollbars=yes");
+	myWidow.location="https://www.tutorialspoint.com/descrete_mathematics/"
+}
+function myFunc() {
+	var myWiow = window.open("","MsWndow","width=1400,height=1024,scrollbars=yes");
+	myWiow.location="https://en.wikibooks.org/wiki/Discrete_Mathematics"
+}
+function myFun() {
+	var myWiw = window.open("","MsWdow","width=1400,height=1024,scrollbars=yes");
+	myWiw.location="https://www.programmingsimplified.com/c-program-examples"
+}
+</script>
+</head>
+<body>
+<div class="image">
+<h3>Descrete Mathematics</h3>
+<l>Description</l>
+<le>Descrete Mathematics is the study of mathematical structures that are fundamentally
+    discrete rather than continuous.Descrete objects can be enumerated by integers.
+    More formally descrete mathematics has been characterized as the branch of 
+    mathematics dealing with countable sets.Concepts in descrete mathematics are useful
+    in studying and describing objects and problems in the branches like computer science.</le>
+<lea>References</lea>
+<lq><button onclick="myFunct()" class="button button1"> Tutorial</button></a></lq>
+
+<lt><button onclick="myFunc()" class="button button1">Wikibook</button></a></lt>
+
+<lr><button onclick="myFun()" class="button button1">Simplified</button></a></lr>
+<k><pre><a href="/pupil"/><font size="9"; color="#CC0000">Ready?<br/></font></pre><button onclick="myFunction()" class="button3 button2"> Take the test</button></a></k>
+</div>
+</body>
+</html>
+
+

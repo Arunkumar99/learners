@@ -1,0 +1,129 @@
+from django.shortcuts import render
+from django.template import RequestContext
+from django.shortcuts import render_to_response
+from pupil.forms import User_infoForm,LoginForm
+from pupil.models import User_info,Questions1,User_data
+from django.http import HttpResponseRedirect
+from datetime import timedelta
+from django.utils import timezone
+from django.contrib.sessions.backends.db import SessionStore
+
+#machine learning imports
+import random
+import sqlite3
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
+import os
+import subprocess
+import pandas as pd
+import numpy as np
+import scipy as sp
+from sklearn import tree
+from StringIO import StringIO
+from pylab import *
+
+#global vars
+key = 0
+qualified = 0
+
+# Create your views here.
+
+from django.http import HttpResponse
+
+def algorithms(request):
+	context = RequestContext(request)
+	response = render_to_response('pupil/algorithms.html', context)
+	questid = int(request.COOKIES.get('questid', '0'))
+	response.set_cookie('questid',questid+1)
+	return response
+
+def extract1(request):
+	context = RequestContext(request)
+	time = request.POST['disp']
+	t = int(time[1:3])
+	print t
+	time = (180-(60*int(time[1:3])+int(time[4:6])))
+	print time
+	answer = request.POST['option']
+	hint = request.POST['hints']
+	user_id = request.session['userid']
+	uid = User_info.objects.filter(name=user_id).values('id')
+	uid = User_info.objects.get(id=uid)
+	obj = User_data(ans=answer,hint=hint,time=timedelta(seconds=time),user=uid)	
+	obj.save()
+	questid = int(request.COOKIES.get('questid', '0'))
+	if questid <=11:
+			return HttpResponseRedirect('/pupil/test4')
+	elif (questid >= 11) and (questid <= 21) :
+			return HttpResponseRedirect('/pupil/test5')
+	else:
+			return HttpResponseRedirect('/pupil/test6')
+
+
+def test4(request):
+	context = RequestContext(request)
+	i = int(request.COOKIES.get('questid'))
+	a = [0,0,0,0,0,0,0,0,0,0]
+	num = Questions1.objects.count()
+	if (i<=10) :
+		question = Questions1.objects.values_list('question',flat=True).get(pk=i)
+		option1 = Questions1.objects.values_list('option1',flat=True).get(pk=i)
+		option2 = Questions1.objects.values_list('option2',flat=True).get(pk=i)
+		option3 = Questions1.objects.values_list('option3',flat=True).get(pk=i)
+		option4 = Questions1.objects.values_list('option4',flat=True).get(pk=i)
+		hint1 = Questions1.objects.values_list('hint1',flat=True).get(pk=i)
+		hint2 = Questions1.objects.values_list('hint2',flat=True).get(pk=i)
+		hint3 = Questions1.objects.values_list('hint3',flat=True).get(pk=i)
+		hint4 = Questions1.objects.values_list('hint4',flat=True).get(pk=i)
+	else:
+		return HttpResponseRedirect('/pupil/result1')
+	context_dict = {'set_id':"Set-1",'question': str(i)+":-\n\t"+question,'option1': option1,'option2': option2,'option3': option3,'option4': option4,'hint1': hint1,'hint2': hint2,'hint3': hint3,'hint4': hint4}
+	response = render_to_response('pupil/testtemp1.html',context_dict,context)
+	response.set_cookie('questid',i+1)
+	return response
+
+def test5(request):
+	context = RequestContext(request)
+	i = int(request.COOKIES.get('questid'))
+	a = [0,0,0,0,0,0,0,0,0,0]
+	num = Questions.objects.count()
+	if (i<=20) :
+		question = Questions1.objects.values_list('question',flat=True).get(pk=i)
+		option1 = Questions1.objects.values_list('option1',flat=True).get(pk=i)
+		option2 = Questions1.objects.values_list('option2',flat=True).get(pk=i)
+		option3 = Questions1.objects.values_list('option3',flat=True).get(pk=i)
+		option4 = Questions1.objects.values_list('option4',flat=True).get(pk=i)
+		hint1 = Questions1.objects.values_list('hint1',flat=True).get(pk=i)
+		hint2 = Questions1.objects.values_list('hint2',flat=True).get(pk=i)
+		hint3 = Questions1.objects.values_list('hint3',flat=True).get(pk=i)
+		hint4 = Questions1.objects.values_list('hint4',flat=True).get(pk=i)
+	else:
+		return HttpResponseRedirect('/pupil/result2')
+	context_dict = {'set_id':"Set-2",'question': str(i)+":-\n\t"+question,'option1': option1,'option2': option2,'option3': option3,'option4': option4,'hint1': hint1,'hint2': hint2,'hint3': hint3,'hint4': hint4}
+	response = render_to_response('pupil/testtemp1.html',context_dict,context)
+	response.set_cookie('questid',i+1)
+	return response
+
+def test6(request):
+	context = RequestContext(request)
+	i = int(request.COOKIES.get('questid'))
+	a = [0,0,0,0,0,0,0,0,0,0]
+	num = Questions.objects.count()
+	if (i<=num) :
+		question = Questions1.objects.values_list('question',flat=True).get(pk=i)
+		option1 = Questions1.objects.values_list('option1',flat=True).get(pk=i)
+		option2 = Questions1.objects.values_list('option2',flat=True).get(pk=i)
+		option3 = Questions1.objects.values_list('option3',flat=True).get(pk=i)
+		option4 = Questions1.objects.values_list('option4',flat=True).get(pk=i)
+		hint1 = Questions1.objects.values_list('hint1',flat=True).get(pk=i)
+		hint2 = Questions1.objects.values_list('hint2',flat=True).get(pk=i)
+		hint3 = Questions1.objects.values_list('hint3',flat=True).get(pk=i)
+		hint4 = Questions1.objects.values_list('hint4',flat=True).get(pk=i)
+	else:
+		return HttpResponseRedirect('/pupil/result3')
+	context_dict = {'set_id':"Set-3",'question': str(i)+":-\n\t"+question,'option1': option1,'option2': option2,'option3': option3,'option4': option4,'hint1': hint1,'hint2': hint2,'hint3': hint3,'hint4': hint4}
+	response = render_to_response('pupil/testtemp1.html',context_dict,context)
+	response.set_cookie('questid',i+1)
+	return response
+
+

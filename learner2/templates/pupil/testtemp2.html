@@ -1,0 +1,119 @@
+<!DOCTYPE html lang="en">
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"> 
+<title>{% block Learner's_Learner %}The Test{% endblock %}</title>
+<script src="{% static 'js/angular.min.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/z.css' %}">
+<!--<link rel="stylesheet" type="text/css" href="{% static 'jquery-ui-1.11.4.custom/jquery-ui.css' %}">-->
+{% if set_id == "Set-1" %}
+<script type="text/javascript" src="{% static 'js/test2.js' %}"></script>
+{% elif set_id == "Set-2" %}
+<script type="text/javascript" src="{% static 'js/test21.js' %}"></script>
+{% elif set_id == "Set-3" %}
+<script type="text/javascript" src="{% static 'js/test22.js' %}"></script>
+{% endif %}
+<script type="text/javascript" src="{% static 'js/jquery-2.2.2.min.js' %}"></script>
+<!--<script type="text/javascript" src="{% static 'jquery-ui-1.11.4.custom/jquery-ui.js' %}"></script>-->
+<script type="text/javascript" language="javascript">
+$(document).ready(function(){
+$("#h1").hide();
+$("#h2").hide();
+$("#h3").hide();
+$("#h4").hide();
+
+$("#h0").click(function(){
+$("#h").hide();
+$("#h1").show();
+});
+
+$("#h1").click(function(){
+$("#h0").hide();
+$("#h2").show();
+});
+
+$("#h2").click(function(){
+$("#h1").hide();
+$("#h3").show();
+});
+
+$("#h3").click(function(){
+$("#h2").hide();
+$("#h4").show();
+});
+
+$("#h4").click(function(){
+$("#h3").hide();
+$("#h5").text("no more hints");
+});
+});
+</script>
+</head>
+<body class="body" ng-app=""  >
+<div id="q">
+<h3>Learner Level-{{ set_id }}</h3>
+</div>
+
+<div id="nav" style="width:92%">
+<!--<h2>{{ set_id }}</h2><hr />-->
+<pre>
+ 		<h3 style="font-size: 20px">Question.{{ question }} </h3>
+
+</pre>
+</div>
+<div>
+<div id="van" style="width: 40%">
+ 		<form style="font-size: 20px" action="{% url 'pupil:extract2' %}" method="POST" name="cd">
+ 			{% csrf_token %}
+ 			
+ 			<h3><input type="radio" name="option" value="0" checked="checked" />Answers:</h3>
+ 			<input type="radio" name="option" value="1" />1.{{ option1 }}<br />
+ 			<input type="radio" name="option" value="2" />2.{{ option2 }}<br />
+ 			<input type="radio" name="option" value="3" />3.{{ option3 }}<br />
+ 			<input type="radio" name="option" value="4" />4.{{ option4 }}<br />
+ 			</div>
+<div id="time" style="width:13%">
+Timer:<input id="txt" readonly="true" type="text" value="03:00" border="7" name="disp" size="10" height="10"></div>
+ 			<div style="position:absolute;left:600px;top:320px;width:40%;height:35%;">
+			<div id="h" style="width: 27%">
+ 			Need a hint?:
+ 			<div id="h0"><input  type="radio" name="hints" value="0" checked="checked" />No
+  <input  type="radio" ng-model="myVar" name="hints" value="0"/>Yes</div></div>
+  <div id="h1"><input  type="radio" ng-model="myVar" name="hints" value="1" />Hint1</div>
+  <div id="h2"><input  type="radio" ng-model="myVar" name="hints" value="2" />Hint2</div>
+  <div id="h3"><input  type="radio" ng-model="myVar" name="hints" value="3" />Hint3</div>
+  <div id="h4"><input  type="radio" ng-model="myVar" name="hints" value="4" />Hint4</div>
+  
+  <div ng-switch="myVar">
+  <div id="hh0" ng-switch-when="0">
+     <h2>Hint0</h2>
+     <p>Click on the current hint to get the next hint.<br/><strong>Be aware!!! More hints means less marks:-)</strong></p>
+  </div>
+  <div id="hh1" ng-switch-when="1">
+     <h2>Hint1</h2>
+     <p> {{ hint1 }} </p>
+  </div>
+  <div id="hh2" ng-switch-when="2">
+     <h2>Hint2</h2>
+     <p> {{ hint2 }} </p>
+  </div>
+  <div id="hh3" ng-switch-when="3">
+     <h2>Hint3</h2>
+     <p> {{ hint3 }} </p>
+  </div>
+  <div id="hh4" ng-switch-when="4">
+     <h2>Hint4</h2>
+     <p>{{ hint4 }} </p>
+  </div>
+  <div id="h5"></div>
+</div>
+<div id="tim">
+ 			
+		<input type="submit" value="Submit" />
+ 		</form>
+ </div>
+</body>
+</html>
+

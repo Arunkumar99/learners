@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<title>{% block title %}Learner's Learner{% endblock %}</title>
+<link rel = "stylesheet" type="text/css" href="{% static 'css/login.css' %}"/>
+</head>
+<body>
+<div class="image">
+<ul>
+
+
+</div>
+<content>
+<hea><h1> Introduction </h1>
+</hea>
+<p align="centre">
+	<h2>Hello Amigo...</h2>
+	<p align="centre"> I am student. I am machine learning web application.<br />
+	In this brief session i am gonna learn about how you learn.<br />
+	In this brief session i am gonna learn about how you learn.<br />
+	In this brief session i am gonna learn about how you learn.<br />
+	In this brief session i am gonna learn about how you learn.<br />
+	In this brief session i am gonna learn about how you learn.<br />
+	In this brief session i am gonna learn about how you learn.<br />
+	In this brief session i am gonna learn about how you learn.<br />
+	This is to aid a learner in learning.<br />
+	<p>
+</p>
+</content>
+</login>
+<log>
+<h2> Login Here </h2>
+<form action="{% url 'pupil:login' %}" method="POST" target="_parent" >
+		{% csrf_token %}
+		<p>
+		{{ form.as_p }}
+		</p>
+      <input type="submit" value="Login" /><br />
+</form>
+</log>
+</div>
+</body>
+</html>

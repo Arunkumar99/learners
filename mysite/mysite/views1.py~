@@ -1,0 +1,7 @@
+from django.template import Template,Context
+from django.http import HttpResponse
+import datetime
+def hello(request):
+    now = datetime.datetime.now()
+    html="<html><body>current time %s.</br>im new to django</br>well i will learn it completely any how</body></html>"%now
+    return HttpResponse(html)

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>{% block Learner's_Learner %}Logoutpage{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/logout.css' %}"/>
+
+</head>
+<body>
+<div class="image">
+<g><h3>We hope you got most out of the learner's system.<br/>
+        Any suggestions from your side are hearby welcome.<br />
+        Please do give your feedback.</h3></g>
+<f><h2>GIVE YOUR FEEDBACK HERE</h2>
+<form action="{% url 'pupil:feedback' %}" method="POST" target="_parent">
+{% csrf_token %}
+<textarea name="feedback" placeholder="your feedback" rows="10" cols="43">
+</textarea><br />
+<input type="submit" value="Submit">
+</form></f>
+
+<j><a href="/pupil"/><button>Logout</button></j>
+
+<l><font color="white"; size="28">Logout here</font></l>
+
+</div>
+</body>
+</html>
+

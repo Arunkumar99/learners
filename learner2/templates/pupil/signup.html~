@@ -1,0 +1,31 @@
+{% extends "login.html" %}
+<div class="aside">
+<h2><strong>{{ boldmessage }}</strong></h2>
+<form action="authentication.py" method="POST" target="_parent" >
+		username:<input type="text" name="name" /><br />
+		password:<input type="password" name="password" /><br />
+		<input type="submit" value="Login" />
+</form><br/>
+<h2>Signup Here</h2>
+<form id="signup" action="/signup" method="POST" target="_parent" >
+		{% csrf_token %}
+		{% for hidden in form.hidden_fields %}
+		{{ hidden }}
+		{% endfor %}
+		<!--username:<input type="text" name="name" /><br />
+		password:<input type="password" name="password" /><br />
+		e-mail_id:<input type="text" name="emailid" /><br />
+		<input type="submit" value="Signup" /><br />
+                optional:<textarea rows=5 cols=40 name="learningstyle" form="signup" placeholder="what's your learning style?..."></textarea><br />-->
+                <input type="submit" value="Signup" /><br />
+</form>
+</div>
+
+<div class="footer">
+<font face="Comic sans MS" size="2"><h3>"Education is the manifestation of the perfection that is already in man." --<em>Swami Vivekananda.</em></h3>
+</div>
+</div>
+{% endblock %}
+</body>
+</html>
+

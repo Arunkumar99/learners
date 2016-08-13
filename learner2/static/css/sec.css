@@ -1,0 +1,88 @@
+.image { 
+   background-image: url("../img/p9.jpeg");
+   background-repeat:no-repeat;
+   position: absolute;
+   background-size:100%; 
+   z-index:0;
+   left:0;
+   top:0;
+   width:100%;
+   height:100%;
+   top:0;
+}
+
+k {
+    position: absolute;
+    top: 50px;
+    left: 40px;  
+    }
+l {
+    position: absolute;
+    top: 150px;
+    left: 40px;    
+}
+
+le {
+    position: absolute;
+    top: 250px;
+    left: 40px;    
+}
+
+lr {
+    position: absolute;
+    top: 350px;
+    left: 40px;    
+}
+lt {
+    position: absolute;
+    top: 450px;
+    left: 40px;    
+}
+
+ls {
+    position: absolute;
+    top: 550px;
+    left: 40px;    
+}
+
+
+
+.button1 {
+width:537px;
+}
+
+.button {
+  display: inline-block;
+  padding: 7px 0px;
+  font-size: 25px;
+  cursor: pointer;
+  text-align: center;	
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #990033;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+
+
+.button:hover {background-color: #993333}
+
+.button:active {
+  background-color: #994444;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px); 
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>{% block Learner's_Learner %}Results{% endblock %}</title>
+<link rel = "stylesheet" type="text/css" href="{% static 'css/status.css' %}"/>
+
+</head>
+<body>
+<div class="image">
+<font color="brown">
+<h1>Know Your Status </h1><br /></font>
+
+<h2><strong>{{ result }}</strong></h2>
+<p0><img src="{% static 'img/fig31.png' %}" alt="performance" /></p0>
+<p1><img src="{% static 'img/fig33.png' %}" alt="performance2" /></p1>
+<p2><img src="{% static 'img/fig32.png' %}" alt="performance1" /></p2>
+	
+<!--<n><h3> Feed back goes here</h3></n>-->
+<div id="section">
+<q1>
+The 'high' parameter indicates how well you have answered <br />
+   the questions without the aid of hints within a short time.Good job.
+</q1>
+<q2>
+The 'mid' parameter indicates how well could you answer with the aid of hints.<br />
+   More hints means average performance 
+</q2>
+<q3>
+The 'low' parameter indicates how much you have went wrong in answering the questions.
+</q3>
+</div>
+<div id="sec2">
+<r>
+You have reached the expected mark to the shown extent in the pi-chart.
+</r>
+
+
+</div>
+<div id="sec3">
+<ul>
+	<li>Thinking:How your thinking aids you in making right decisions. </li><br />
+	<li>Knowledge:How much your knowledge has helped you answer the questions.</li><br />
+	<li>Analyzing:How well you can analyse the questions.</li><br />
+	<li>Need to improve:How much more you have to improve.</li><br />
+</ul>
+</div>
+
+<m><h3><a href="{% url 'pupil:logout' %}" /><button  class="button button1">Finish</button></a></h3></m>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>{% block title %}Learner's Learner{% endblock %}</title>
+<link rel = "stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
+<script type="text/javascript">
+function myFunct() {
+	var myWidow = window.open("","MsWindow","width=1300,height=804,scrollbars=yes");
+	myWidow.location="/pupil/beni"
+}
+function myFunc() {
+	var myWiow = window.open("","MsWndow","width=1400,height=1024,scrollbars=yes");
+	myWiow.location="/pupil/about"
+}
+</script>
+</head>
+<body>
+<div class="image">
+
+<i> <img src="{% static 'img/brain2.png' %}" align="left" width="80" height="100"></i>
+      
+      <pre><font face="Comic sans MS" size="50"><h3>Learner's Learner</h3>
+			
+			 </font><m><font face="Comic sans MS" size='4'><b>How much you know about what you know...</b></font></pre></m>  
+                                    
+<j> <img src="{% static 'img/s7.png' %}" align="right" width="400" height="350"></j>
+<k> <img src= "{% static 'img/r9.png' %}" align="left" width="489" height="250"></k>
+<lea><p><pre><h1><font face="Comic sans MS"><b>The first step towards Knowledge is to
+ know that we are ignorant!!!</b></font></h1></pre></p></lea>
+<g><p><pre><h2><font face="Comic sans MS">	LEARNING is the Treasure that will follow its owner everywhere!!!</font></h2></pre></p></g>
+
+
+
+ 
+<l><font face="Comic sans MS" size="5"> <a href="/pupil"> <button class="button"> Home</button></a><button onclick="myFunct()" class="button">Benefits</button></a><a href="{% url 'pupil:login' %}"><button class="button">login </button></a> <a href="{% url 'pupil:signup' %}"> <button class="button">signup</button></a><button onclick="myFunc()" class="button">About Us</button></font></l></code>
+<f><font face="Comic sans MS" size="9" color="grey">   </font></code></f>
+
+</div>
+</body>
+</html>

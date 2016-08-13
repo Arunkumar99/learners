@@ -1,0 +1,100 @@
+.header {
+     /*background-image: url("{% static '' %}");*/
+     color:#66CCCC;
+     text-align:center;
+     padding:7px;
+     font-family: "Times New Roman", Georgia,Serif;
+      -webkit-animation: mymove0 5s infinite; 
+    animation: mymove0 10s infinite;
+   
+  }
+@-webkit-keyframes mymove0 {
+    from {background-color: #0000FF00;}
+    to {background-color:#6699CC;}
+}
+
+@keyframes mymove0 {
+    from {background-color: #0000AA00;}
+    to {background-color:#0000BBBB;}
+}
+
+.nav {
+    line-height:30px;
+    height:540px;
+    width:300px;
+    float:left;
+    padding:5px;
+    -webkit-animation: mymove 5s infinite; 
+    animation: mymove 30s infinite;
+   
+  }
+@-webkit-keyframes mymove {
+    from {background-color: #0000FF00;}
+    to {background-color:#99AAFF;}
+}
+
+@keyframes mymove {
+    from {background-color: #0000AA00;}
+    to {background-color:#009999;}
+}
+
+.section {
+    width:687px;
+    height:520px;
+    float:left;
+    padding:15px;	 	 
+    -webkit-animation: mymove2 5s infinite; 
+    animation: mymove2 30s infinite;
+   
+  }
+@-webkit-keyframes mymove2 {
+    from {background-color: #0000FF00;}
+    to {background-color:#99AAFF;}
+}
+
+@keyframes mymove2 {
+    from {background-color: #0000AA00;}
+    to {background-color:#0099FF;}
+}
+
+.aside {
+	/*background-color:#996666;*/
+	line-height:30px;
+    height:840px;
+    width:300px;
+    float:right;
+    padding:5px;
+    -webkit-animation: mymove 5s infinite; 
+    animation: mymove1 30s infinite;
+}   
+@-webkit-keyframes mymove1 {
+    from {background-color: #0000CCFF;}
+    to {background-color:#009999;}
+}
+
+@keyframes mymove1 {
+    from {background-color: #0000CCFF;}
+    to {background-color:#009999;}
+}
+
+ 	
+
+.footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+
+.body {
+     background-size:1500px,600px;
+     bottom:0;
+     background-image: url("moocs.jpg");
+     background-repeat:no-repeat;
+     color:white;
+     text-align:center;
+     /*padding:5px;*/
+     font-family: "Times New Roman", Georgia,Serif;
+      }
+

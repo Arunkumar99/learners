@@ -1,0 +1,15 @@
+from django import forms
+from django.forms import ModelForm
+from pupil.models import User_info,User_data
+
+class User_infoForm(ModelForm) :
+	#name = forms.CharField('user name',max_length=30,unique=True)
+	#password = forms.CharField('user password',max_length=30)
+	#emailid = forms.CharField('emailid of user',max_length=50)
+	#personal = forms.TextField()
+	
+	class Meta:
+		model = User_info
+		fields = ['name','password','emailid','personal']
+		#widgets = {'personal': Textarea(attrs = {'cols': 40, 'rows': 5}),}
+

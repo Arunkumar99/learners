@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>{% block Learner's_Learner %}Theory Of Computation{% endblock %}</title>
+<link rel = "stylesheet" type="text/css" href="{% static 'css/prog.css' %}"/>
+<script>
+function myFunction() {
+	var myWindow = window.open("","MsgWindow","width=1400,height=1024,scrollbars=yes");
+	myWindow.location="/pupil/test13"
+}
+function myFunct() {
+	var myWidow = window.open("","MsWindow","width=1400,height=1024,scrollbars=yes");
+	myWidow.location="https://www.cprogramming.com/tutorial/c-tutorial.html"
+}
+function myFunc() {
+	var myWiow = window.open("","MsWndow","width=1400,height=1024,scrollbars=yes");
+	myWiow.location="https://en.wikibooks.org/wiki/C_Programming"
+}
+function myFun() {
+	var myWiw = window.open("","MsWdow","width=1400,height=1024,scrollbars=yes");
+	myWiw.location="https://www.programmingsimplified.com/c-program-examples"
+}
+</script>
+</head>
+<body>
+<div class="image">
+<h3>Theory of Computation</h3>
+<l>Description</l>
+<le>The theory of computation is the branch of both computer science and mathematics
+    that deals with how efficiently problems can be solved on a model of computation
+    ,using a algorithm.The field is divided into 3 major branches: automata theory and
+    language,computability theory,and computational complexity theory which are linked
+    by the question:"what are the fundamental capabilities and limitations of computers."</le>
+<lea>References</lea>
+<lq><button onclick="myFunct()" class="button button1"> Tutorial</button></a></lq>
+
+<lt><button onclick="myFunc()" class="button button1">Wikibook</button></a></lt>
+
+<lr><button onclick="myFun()" class="button button1">Simplified</button></a></lr>
+<k><pre><a href="/pupil"/><font size="9"; color="#CC0000">Ready?<br/></font></pre><button onclick="myFunction()" class="button3 button2"> Take the test</button></a></k>
+</div>
+</body>
+</html>

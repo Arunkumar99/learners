@@ -1,0 +1,29 @@
+import os
+import subprocess
+import pandas as pd
+import numpy as np
+import scipy as sp
+from sklearn import tree
+from StringIO import StringIO
+#from matplotlib import 
+data2 = sp.genfromtxt("datain.csv",dtype=int,delimiter=',\t')
+print data2
+data1 = sp.genfromtxt("datain2.csv",dtype=int,delimiter=',\t')
+print data1
+target = ["low","low","high","high","high","high","high","mid","mid","mid","mid","mid"]
+#target = ['high','high', 'low', 'low', 'low', 'low', 'mid','high', 'mid', 'low', 'low', 'low','low', 'mid', 'mid', 'low', 'high','mid', 'high', 'mid', 'mid']
+
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(data2,target)
+out = StringIO()
+out = tree.export_graphviz(clf, out_file='output.dot')
+result = clf.predict(data1)
+print result
+
+
+
+#for displaying the tree
+#exec("dot -Tpng output.dot -o output.png|shotwell output.png")
+
+
+

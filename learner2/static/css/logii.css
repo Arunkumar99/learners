@@ -1,0 +1,37 @@
+#header {
+     /*background-image: url("/static/");*/
+     color:#66CCCC;
+     text-align:center;
+     line-height:0;
+     text-shadow:3px 4px 5px #000;
+     padding:7px;
+     font-family: "Times New Roman", Georgia,Serif;
+}
+#footer {
+    background-color:gray;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+
+#body {
+     background-size:1500px,600px;
+     bottom:0;
+     background-image: url("moocs.jpg");
+     background-repeat:no-repeat;
+     color:white;
+     text-align:center;
+     padding:5px;
+     font-family: "Times New Roman", Georgia,Serif;
+
+       
+}
+#section {
+    width:1000px;
+    float:left;
+    padding:10px;
+    text-align:left;
+    color:#009966;	 	 
+}
+

@@ -1,0 +1,4 @@
+{% extends "status10.html" %}
+{% block link %}
+	<m><a href='{% url "pupil:test5" %}'><button class="button button1">Go to next page</button></a></m>
+{% endblock %}	

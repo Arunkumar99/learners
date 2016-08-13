@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>{% block Learner's_Learner %}Categories{% endblock %}</title>
+<link rel = "stylesheet" type="text/css" href="{% static 'css/sec.css' %}"/>
+</head>
+<body>
+<div class="image">
+ <font color="#000033"; size="26">Choose your interest!!</font>
+<div id="list" style="background-color: #ff9900;position:relative;left:30px;width:40%; box-shadow: 0 5px #666;transform: translateY(2px);border-radius: 10px;">
+
+</div>
+<k><a href="{% url 'pupil:python' %}"> <button class="button button1"> Python</button></a></k>
+
+<l><a href="{% url 'pupil:algorithms' %}"> <button class="button button1"> Algorithms</button></a></l>
+
+<le><a href="{% url 'pupil:ds' %}"> <button class="button button1"> Data Structure</button></a></le>
+
+<lr><a href="{% url 'pupil:c_programming' %}"><button class="button button1">C programming</button></a></lr>
+
+<lt><a href="{% url 'pupil:toc' %}"> <button class="button button1"> Theory of computation</button></a></lt>
+
+<ls><a href="{% url 'pupil:dm' %}"> <button class="button button1"> Discrete Mathematics</button></a></ls>
+</div>
+
+</body>
+</html>
+
+
+

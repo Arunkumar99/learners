@@ -1,0 +1,59 @@
+.image { 
+   background-image: url("../img/2p.jpg");
+   background-repeat:no-repeat;
+   position: absolute;
+   background-size:100%; 
+   z-index:0;
+   left:0;
+   top:0;
+   width:100%;
+   height:100%;
+   top:0;
+}
+
+lm {
+    position:absolute;
+    left:985px; 
+    top:3;   
+}
+
+
+
+
+.button1 {
+width:197px;
+}
+
+.button3 {
+  border-radius: 43%;
+  display: inline-block;
+  padding: 9px 0px;
+  font-size: 25px;
+  background-color: #CC3333;
+}
+
+w {
+  position:absolute;
+  left:37px;
+  width:50%;
+ } 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+.image { 
+   background-image: url("white5.jpg");
+   background-repeat:no-repeat;
+   position: absolute;
+   background-size:1300px,100px; 
+   z-index:0;
+   left:0;
+   top:0;
+   width:100%;
+   height:100%;
+   /*width: 150%; /* for IE 6 */
+   /*background: url(bgimage.jpg) no-repeat;*/
+   /*background-size: 100%;*/
+}
+t
+{
+   position: absolute; 
+   top: 3px;
+   left: 500px;
+   color:white;
+   text-shadow:3px 4px 5px #000; 
+   text-align:left; 
+   width: 50%; 
+}
+r
+{
+ position:absolute;
+ top: 100px;
+ color:red;
+ font-size:20;
+ text-align:left;
+ left: 5px;
+ 
+}
+q
+{
+ position:absolute;
+ top: 120px;
+ left:
+ color:pink;
+ font-size:20;
+ text-align:left;
+ left: 5px;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

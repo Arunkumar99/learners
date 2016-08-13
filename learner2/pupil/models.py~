@@ -1,0 +1,20 @@
+from django.db import models
+
+# Create your models here.
+
+class User_info(models.Model):
+	name = models.CharField('user name',max_length=30)
+	password = models.CharField('user password',max_length=30)
+	emailid = models.CharField('emailid of user',max_length=50)
+	personal = models.TextField()
+	
+	def __str__(self):
+		return self.name
+
+class User_data(models.Model):
+	ans = models.IntegerField()
+	hint = models.IntegerField()
+	time = models.DurationField()
+	user = models.ForeignKey('User_info')
+	def __str__(self):
+		return self.ans

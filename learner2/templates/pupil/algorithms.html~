@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>{% block Learner's_Learner %}Algorithms{% endblock %}</title>
+<link rel = "stylesheet" type="text/css" href="{% static 'css/prog.css' %}"/>
+<script>
+function myFunction() {
+	var myWindow = window.open("","MsgWindow","width=1400,height=1024,scrollbars=yes");
+	myWindow.location="/pupil/test4"
+}
+function myFunct() {
+	var myWidow = window.open("","MsWindow","width=1400,height=1024,scrollbars=yes");
+	myWidow.location="http://www.tutorialspoint.com/data_structures_algorithms/"
+}
+function myFunc() {
+	var myWiow = window.open("","MsWndow","width=1400,height=1024,scrollbars=yes");
+	myWiow.location="https://upload.wikimedia.org/wikipedia/commons/8/81/Algorithms.pdf"
+}
+function myFun() {
+	var myWiw = window.open("","MsWdow","width=1400,height=1024,scrollbars=yes");
+	myWiw.location="http://www.algorist.com/"
+}
+</script>
+</head>
+<body>
+<div class="image">
+<h3>Algorithms</h3>
+<l>Description</l>
+<le>The C language is the middle level language in the hierarchy of programming languages
+   Programming in C needs a particular skill set of logical reasoning and a fair knowledge of
+   the language itself.Following are the few references you can go through before you can test 
+   your learning ability.</le>
+<lea>References</lea>
+<lq><button onclick="myFunct()" class="button button1"> Tutorial</button></a></lq>
+
+<lt><button onclick="myFunc()" class="button button1">Wikibook</button></a></lt>
+
+<lr><button onclick="myFun()" class="button button1">Simplified</button></a></lr>
+<k><pre><a href="/pupil"/><font size="9"; color="#CC0000">Ready?<br/></font></pre><button onclick="myFunction()" class="button3 button2"> Take the test</button></a></k>
+</div>
+</body>
+</html>
+
+
